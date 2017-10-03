@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{scrartcl}
+% a4paper bestimmt die Papiergröße als Din A4
+% 11pt legt die Schriftgröße auf 11pt fest
+% scartcl ist die KOMA Sckript Klasse für article; der größte Unterschied besteht darin, dass die Überschriften in einer serifenlosen Schrift dargestellt werden.
+\usepackage{ngerman} % bestimmt die deutsche Sprache mit den neuen Rechtschribung als Grundlage für die Wörterbücher und die Metawörter
+\usepackage{eurosym} % ermögicht mit \euro den Zugriff auf ein dem Zeichensatz angepasstes Eurosymbol
+\usepackage{textcomp} % Zugriff auf zusätzliche Textsymbole, zum Beispiel \texteuro, \textcopyright, \textregistered, \texttrademark, \textdollar, \texteuro, \textperthousand
+\usepackage{fontenc} % lädt die Textfontkodierung; dies wird benötigt um die utf Kodierung verwenden zu können
+\usepackage[utf8]{inputenc} % ermöglicht die Verwendung von utf8-kodierten Quelltexten
+\usepackage{alltt} % definiert die alltt-Umgebung, eine verbatim-Umgebung, in der die Zeichen \,{,} ihre Gültigkeit behalten
+\usepackage{graphicx} % ermöglicht mit dem \includegraphics Befehl das Einbinden von externen Graphiken
+\usepackage{paralist} % erweitert die enumerate-Umgebung um einen optionalen Parameter, der die Art der Nummerierung angiebt: a), A., i), 1), Beispiel i), ...
+\usepackage{tabularx} % ermöglicht die Verwendung von variablen Breiten mit der Formatanweisung X statt p{Breite} in der tabular-Umgebung
+\usepackage{float} % der Parameter H in den Positionsoptionen von Gleitobjekten erzwingt die Positionierung an der Stelle im Quelltext
+\usepackage{multicol} % ermöglicht die Verwendung des Befehls twocolumn auch in minipage oder figure Umgebungen, beziehungsweise die Verwendung der Umgebung multicols mit den Parametern {Spalten}[Vortext][Abstand]
+\usepackage{fancyhdr} % ermöglicht die Verwendung eigener Kolumnentitel (Kopf- und Fusszeilen)
+\usepackage{hyperref} % verwandelt alle Querverweise in Hyperlinks; es sollte als letztes Paket eingebunden werden
+
+\begin{document}
+
+\graphicspath{{./images/}} % gibt den Pfad zu den Graphikdateien an, die eingebunden werden; hier das Unterverzeichnis bilder
+\DeclareGraphicsExtensions{.jpg,.png} % erlaubte Graphikobjekte
+
+\title{Titel\\ \small Untertitel}
+\author{Thomas Steglich\\
+\small \url{www.thomas-steglich.de}\\
+\small @tomsteg\\
+\small info@thomas-steglich.de\\
+\small 0151 24104316}
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+\noindent Text der Zusammenfassung
+\end{abstract}
+
+\pagestyle{fancy} % Layout Stil für Kopf- und Fusszeilen
+\lhead{\leftmark} % linker,
+\chead{} % mittlerer und
+\rhead{\rightmark} % rechter Bereich der Kopfzeile
+\lfoot{Thomas Steglich} % linker,
+\cfoot{\thepage} % mittlerer und
+\rfoot{\today} % rechter Bereich der Fusszeile, wobei thepage die Seitennummer ausgibt, und leftmark und rightmark die Kapitel und Unterkapitel ausgibt.
+\renewcommand\headrulewidth{1pt} % gibt die Dicke der Linie zwischen Kopfzeile und Text an
+\renewcommand\footrulewidth{1pt} % gibt die Dicke der Linie zwischen Text und Fusszeile an
+
+\newpage % neue Seite für Inhaltsverzeichnis
+\tableofcontents % Inhaltsverzeichnis
+\newpage % neue Seite nach Inhaltsverzeichnis
+
+\section{Überschrift}
+
+Das ist ein Beispieltext\cite[Text]{zitierschluessel}.
+
+\nocite{*} % alle Literaturangaben werden genannt, auch wenn keine Verweise auf sie zeigen
+\bibliographystyle{plain}
+\begin{thebibliography}{\hspace{1cm}}
+	\bibitem [label]{zitierschluessel} bibliographische Information
+\end{thebibliography}
+
+\end{document}
