@@ -1,0 +1,36 @@
+\ProvidesFile{tsbrieflco.lco}[20117/10/03 letter class option]
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{fix-cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\KOMAoptions{%
+paper=a4,
+pagenumber=botcenter,
+fromalign=right,
+fromrule=afteraddress,
+fromphone=true,
+fromlogo=true,
+fromurl=true,
+fromemail=true,
+subject=titled,
+backaddress=true,
+foldmarks=true
+}
+\setkomavar{fromname}{Thomas Steglich}
+\setkomavar{fromaddress}{Aribostr. 5c\\83115 Neubeuern}
+\setkomavar{fromphone}{0151 24104316}
+\setkomavar{fromemail}{info@thomas-steglich.de}
+\setkomavar*{emailseparator}{mailto}
+\setkomavar{emailseparator}{: }
+\setkomavar{fromurl}{\url{www.thomas-steglich.de}}
+\setkomavar{place}{Neubeuern}
+\setkomavar{fromlogo}{\parbox[b]{8cm}{\usekomafont{fromaddress}%
+        {\mbox{\LARGE Thomas Steglich}}
+        \smallskip}
+}
+\setkomafont{backaddress}{\sffamily}
+\setkomafont{fromaddress}{\sffamily}
+\addtokomafont{fromname}{\scriptsize}
+\addtokomafont{fromaddress}{\scriptsize}
+\pagestyle{headings}
